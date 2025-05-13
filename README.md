@@ -1,5 +1,3 @@
-# Neurovance
-
 <p align="center">
   <img src="banner.png" alt="Neurovance Banner" width="100%">
 </p>
