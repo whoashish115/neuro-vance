@@ -1,0 +1,449 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:400,500,600,700,800");
+@import "tailwindcss";
+@variant dark (&:where([data-theme="dark"]));
+
+@font-face {
+  font-family: "Exo";
+  src: url("/assets/fonts/Exo.ttf");
+}
+/* Roboto Thin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: url('/assets/fonts/Roboto-Thin.ttf') format('truetype');
+}
+
+/* Roboto Thin Italic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 100;
+  src: url('/assets/fonts/Roboto-ThinItalic.ttf') format('truetype');
+}
+
+/* Roboto ExtraLight */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 200;
+  src: url('/assets/fonts/Roboto-ExtraLight.ttf') format('truetype');
+}
+
+/* Roboto ExtraLight Italic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 200;
+  src: url('/assets/fonts/Roboto-ExtraLightItalic.ttf') format('truetype');
+}
+
+/* Roboto Light */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/assets/fonts/Roboto-Light.ttf') format('truetype');
+}
+
+/* Roboto Light Italic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  src: url('/assets/fonts/Roboto-LightItalic.ttf') format('truetype');
+}
+
+/* Roboto Regular */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+/* Roboto Italic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/assets/fonts/Roboto-Italic.ttf') format('truetype');
+}
+
+/* Roboto Medium */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/assets/fonts/Roboto-Medium.ttf') format('truetype');
+}
+
+/* Roboto Medium Italic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('/assets/fonts/Roboto-MediumItalic.ttf') format('truetype');
+}
+
+/* Roboto SemiBold */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/assets/fonts/Roboto-SemiBold.ttf') format('truetype');
+}
+
+/* Roboto SemiBold Italic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 600;
+  src: url('/assets/fonts/Roboto-SemiBoldItalic.ttf') format('truetype');
+}
+
+/* Roboto Bold */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/Roboto-Bold.ttf') format('truetype');
+}
+
+/* Roboto Bold Italic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/assets/fonts/Roboto-BoldItalic.ttf') format('truetype');
+}
+
+/* Roboto ExtraBold (optional, if available) */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/assets/fonts/Roboto-ExtraBold.ttf') format('truetype');
+}
+
+/* Roboto ExtraBold Italic (optional, if available) */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 800;
+  src: url('/assets/fonts/Roboto-ExtraBoldItalic.ttf') format('truetype');
+}
+
+/* Roboto Black */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('/assets/fonts/Roboto-Black.ttf') format('truetype');
+}
+
+/* Roboto Black Italic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('/assets/fonts/Roboto-BlackItalic.ttf') format('truetype');
+}
+
+
+@theme  
+{
+  --color-primary: rgb(74, 128, 255);
+  --color-secondary:rgb(255, 64, 255);
+
+  --color-default: rgba(0, 0, 0, 1);
+  --color-paper: rgba(12, 12, 12, 1);
+  --color-box: rgba(24, 24, 24, 1);
+
+  --color-title: rgba(255, 255, 255, 1);
+  --color-subtitle: rgba(180, 180, 180, 1);
+  --color-paragraph: rgba(180, 180, 180, 1);
+
+  --color-outline: rgba(40, 42, 48, 1);
+
+  --color-scroll-body-bg: rgba(10, 10, 22, 1);
+  --color-scroll-body-thumb: rgba(20, 24, 38, 1);
+
+  --font-primary: "Roboto", sans-serif;
+  --font-secondary: 'Exo', sans-serif;
+  
+}
+
+html{
+  scroll-behavior: smooth;
+  
+}
+body {
+  @apply bg-default text-paragraph;
+  scroll-behavior: smooth;
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .font-title {
+  font-family: var(--font-secondary) ;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+img {
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+::selection {
+  @apply bg-primary text-white;
+}
+::-webkit-scrollbar {
+  @apply bg-scroll-body-bg;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-scroll-body-thumb border-2 border-scroll-body-bg
+}
+
+.gradient-text{
+    background-image: linear-gradient(var(--color-primary),  var(--color-secondary));
+    color: transparent;
+    background-clip: text;
+}
+.gradient-bg{
+  background-image: linear-gradient(var(--color-primary),  var(--color-secondary));
+}
+
+.hover-gradient-text:hover{
+    background-image: linear-gradient(var(--color-primary),  var(--color-secondary));
+    border-image: linear-gradient(to right, var(--color-primary),  var(--color-secondary)) 1;
+    color: transparent;
+    background-clip: text;
+}
+.before-gradient-bg::before{
+  background-image: linear-gradient(var(--color-primary),  var(--color-secondary));
+
+}
+.swiper-pagination-bullet {
+  background: var(--color-primary) !important;
+  width: 40px !important;
+  height: 6px !important;
+  margin: 6px !important;
+  cursor: pointer !important;
+  border: 4px solid var(--color-title) !important;
+  border-radius: 4px !important;
+  display: inline-block !important;
+}
+
+.animate-float {
+  animation: float 10s infinite;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(12deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+
+.overlay::before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--);
+  background: -moz-linear-gradient(
+    90deg,
+    var(--) 0,
+    rgba(5, 6, 10, 0.6) 40%,
+    rgba(5, 6, 10, 0) 60%,
+    rgba(5, 6, 10, 0) 80%,
+    rgba(5, 6, 10, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(5, 6, 10, 1) 0,
+    rgba(5, 6, 10, 0.6) 40%,
+    rgba(5, 6, 10, 0) 60%,
+    rgba(5, 6, 10, 0) 80%,
+    rgba(5, 6, 10, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(5, 6, 10, 1) 0,
+    rgba(5, 6, 10, 0.6) 40%,
+    rgba(5, 6, 10, 0) 60%,
+    rgba(5, 6, 10, 0) 80%,
+    rgba(5, 6, 10, 1) 100%
+  );
+}
+
+.overlay::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(5, 6, 10, 1);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(5, 6, 10, 1) 0,
+    rgba(5, 6, 10, 0) 50%,
+    rgba(5, 6, 10, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(5, 6, 10, 1) 0,
+    rgba(5, 6, 10, 0) 50%,
+    rgba(5, 6, 10, 1) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(5, 6, 10, 1) 0,
+    rgba(5, 6, 10, 0) 50%,
+    rgba(5, 6, 10, 1) 100%
+  );
+  z-index: 2;
+} 
+
+.wrap {
+  width: 100%;
+  position: relative;
+}
+.triangle {
+  background: var(--color-default);
+  clip-path: polygon(0 60%, 0% 100%, 100% 100%);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  width: 50%;
+}
+.triangle.tr-right {
+  left: auto;
+  right: 0;
+  clip-path: polygon(100% 60%, 0% 100%, 100% 100%);
+}
+.hero-dot{
+  animation: hero-dot 1s ease-in-out infinite;
+}
+@keyframes hero-dot {
+  0%{
+   transform: translateY(0px); 
+  }
+  50%{
+   transform: translateY(40px); 
+  }
+  100%{
+    transform: translateY(40px); 
+    opacity: 0;
+  }
+  
+}
+
+
+
+.gradient-button {
+  padding: 0.4rem 3rem;
+  border: none;
+  outline: none;
+  position: relative;
+  border-radius: 99999px;
+  background: linear-gradient(var(--color-primary),  var(--color-secondary));
+  cursor: pointer;
+  z-index: 1;
+}
+.gradient-button::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  border-radius: 99999px;
+  background-color: var(--color-default);
+  z-index: -1;
+  transition: 200ms;
+}
+.gradient-button::after {
+  content: attr(data);
+  background: linear-gradient(var(--color-primary),  var(--color-secondary));
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: 200ms;
+  text-transform: capitalize;
+}
+.gradient-button:hover::before {
+  opacity: 0%;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.gradient-button:hover::after {
+  color: white;
+}
+.gradient-button-alternate {
+  padding: 0.4rem 3rem;
+  border: none;
+  outline: none;
+  position: relative;
+  border-radius: 99999px;
+  background: linear-gradient(var(--color-primary),  var(--color-secondary));
+  cursor: pointer;
+  z-index: 1;
+}
+.gradient-button-alternate::before {
+  content: "";
+  position: absolute;
+  opacity: 20%;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 99999px;
+  background-color: var(--color-default);
+  z-index: -1;
+  transition: 200ms;
+}
+.gradient-button-alternate::after {
+  content: attr(data);
+  background: linear-gradient(var(--color-primary),  var(--color-secondary));
+  -webkit-background-clip: text;
+  transition: 200ms;
+  color: white;
+  text-transform: capitalize;
+}
+.gradient-button-alternate:hover::before {
+  opacity: 100%;
+  left: 2px;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+}
+.gradient-button-alternate:hover::after {
+  color: transparent;
+}
